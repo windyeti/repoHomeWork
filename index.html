@@ -11,19 +11,36 @@
 			<p>Товар №1</p>
 			<p>Цена: <span class="price">200</span></p>
 			<button class="buy" id="good_111">Купить </button>
+			<button class="showReview">Показать отзывы</button>
 		</div>
 		<div class="good">
 			<p>Товар №2</p>
 			<p>Цена: <span class="price">150</span></p>
-			<button class="buy" id="good_112">Купить </button>
+			<button class="buy" id="good_112">Купить</button>
+			<button class="showReview">Показать отзывы </button>
 		</div>
 		<div class="good">
 			<p>Товар №3</p>
 			<p>Цена: <span class="price">75</span></p>
-			<button class="buy" id="good_113">Купить </button>
+			<button class="buy" id="good_113">Купить</button>
+			<button class="showReview">Показать отзывы</button>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src="js/main.js"></script>
-		<script src="js/main.js"></script>
+		<script>
+			var basket = new Basket();
+			basket.render('#basket-wrapper');
+			
+			var review = new Review();
+			review.getReviews('111');
+			
+			$('.good').on('click', 'button', function() {
+				var $this = $(this);
+				var idGood = $this.attr('id').split('_')[1];
+				var price = $this.parent().find('.price').text();
+			
+				basket.add(idGood, 1, price);
+			})
+		</script>
 	</body>
 </html>

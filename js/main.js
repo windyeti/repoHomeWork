@@ -27,13 +27,13 @@ Basket.prototype.render = function(wrapper) {
 }
 Basket.prototype.getGoodItems = function() {
 	$.ajax({
-		url : 'basket.goods.json',
+		url : '/basket.goods.json',
 		dataType : 'json',
 		context : this,
 		success : function(data) {
 			if(data.result == 1) {
 				this.countGoods = data.basket.length;
-				this.amount = data.amount;
+				this.amount = parseInt(data.amount);
 				this.goodItems = data.basket;
 
 				this.$divData = $('<div>').attr({'class' : 'div-data'});
@@ -52,9 +52,9 @@ Basket.prototype.getGoodItems = function() {
 }
 Basket.prototype.add = function(idGood, quantity, price) {
 	this.countGoods += quantity;
-	this.amount += price;
+	this.amount += +price;
 	this.goodItems.push({
-		id_good : idGood,
+		id_product : idGood,
 		price : price
 	});
 	this.refresh();
@@ -65,7 +65,33 @@ Basket.prototype.refresh = function() {
 	this.$divData.append( $('<p>').attr({'class' : 'amount'}).text('На сумму: ' + this.amount) )
 	this.$divData.appendTo(this.$divBasket);
 }
-var basket = new Basket();
-// var $basketWrapper = $('#basket-wrapper');
-basket.render('#basket-wrapper');
+function Review() {
+	Container.call(this);
+	this.id = 'review';
+	this.goodReviews = [];
+}
+Review.prototype = Object.create(Container.prototype);
+Review.prototype.constructor = Review;
+
+Review.prototype.render = function() {
+	this.$div = $('<div>').attr({'class' : 'review'});
+};
+
+Review.prototype.getReviews = function(idProduct) {
+	$.ajax({
+		url : 'review.good.json',
+		dataType : 'json',
+		context : this,
+		success : function(data) {
+			if(data.result == 1) {
+				var resultSearch = $(data.goods).each(function(inx, value) {
+					// console.log( inx );
+					if(value.id_product == idProduct) return true;
+				});
+			}
+		},
+		error : function() {
+		}
+	});
+};
 //# sourceMappingURL=main.js.map
