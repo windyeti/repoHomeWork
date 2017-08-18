@@ -32,15 +32,21 @@
 			basket.render('#basket-wrapper');
 			
 			var review = new Review();
-			review.getReviews('111');
+			//- review.getReviews('111');
 			
-			$('.good').on('click', 'button', function() {
+			$('.good').on('click', '.buy', function() {
 				var $this = $(this);
 				var idGood = $this.attr('id').split('_')[1];
 				var price = $this.parent().find('.price').text();
 			
 				basket.add(idGood, 1, price);
-			})
+			});
+			$('.good').on('click', '.showReview', function() {
+				var $this = $(this);
+				var idGood = $this.parent().find('.buy').attr('id').split('_')[1];
+				//- console.log(§$this.text());
+				review.render(idGood, $this);
+			});
 		</script>
 	</body>
 </html>
