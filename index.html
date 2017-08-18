@@ -2,48 +2,28 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<title>Форма обратной связи</title>
 		<link rel="stylesheet" href="css/main.css"/>
+		<title>Корзина</title>
 	</head>
 	<body>
-		<form class="form" action="#" method="get" name="form-autorization">
-			<label class="form-label"> 
-				<div class="form-sing">Имя</div>
-				<input class="form-name form-input" type="text" name="name" placeholder="Имя"/>
-			</label>
-			<label class="form-label"> 
-				<div class="form-sing">Телефон</div>
-				<input class="form-phone form-input" type="text" name="phone" placeholder="+7 (700) 700-00-00"/>
-			</label>
-			<label class="form-label"> 
-				<div class="form-sing">E-mail</div>
-				<input class="form-email form-input" type="text" name="email" placeholder="e-mail@mail.ru"/>
-			</label>
-			<label class="form-label"> 
-				<div class="form-sing">Город</div>
-				<input class="form-city form-input" type="text" name="city" placeholder="город" autocomplete="off"/>
-			</label>
-			<label class="form-label"> 
-				<div class="form-sing">Сообщение</div>
-				<textarea class="form-message" name="message" placeholder="сообщение"></textarea>
-			</label>
-			<button class="form-button form-button_submit" type="submit">Отправить</button>
-		</form>
-		<div class="tabs">
-			<div class="tabs-menu clearfix">
-				<div class="tabs-tab" data-set="1">Первый</div>
-				<div class="tabs-tab" data-set="2">Второй</div>
-				<div class="tabs-tab" data-set="3">Третий</div>
-				<div class="tabs-tab" data-set="4">Четвертый</div>
-			</div>
-			<div class="tabs-fields">
-				<div class="tabs-field" data-set="1">Первый Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum harum voluptatum, labore quaerat accusantium laudantium porro aut vel ut amet adipisci tempore dignissimos nulla earum quisquam beatae ipsam deserunt debitis hic doloribus eius tempora autem voluptate. Molestiae inventore quam, quisquam dolor neque sequi ut. Qui reprehenderit magni, alias possimus sapiente architecto. Omnis illum, quae nostrum pariatur, dolore, error et aperiam quasi, nobis a vitae iusto animi incidunt repellendus necessitatibus debitis ratione ad dolorem amet obcaecati. Praesentium porro, alias rerum. Enim, quo. Perferendis, modi. Minus molestias, doloremque, maiores quo ipsa quisquam a beatae cumque </div>
-				<div class="tabs-field" data-set="2">Второй Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum harum voluptatum, labore quaerat accusantium laudantium porro aut vel ut amet adipisci tempore dignissimos nulla earum quisquam beatae ipsam deserunt debitis hic doloribus eius tempora autem voluptate. Molestiae inventore quam, quisquam dolor neque sequi ut. Qui reprehenderit magni, alias possimus sapiente architecto. Omnis illum, quae nostrum pariatur, dolore, error et aperiam quasi, nobis a vitae iusto animi incidunt repellendus necessitatibus debitis ratione ad dolorem amet obcaecati. Praesentium porro, alias rerum. Enim, quo. </div>
-				<div class="tabs-field" data-set="3">Третий Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum harum voluptatum, labore quaerat accusantium laudantium porro aut vel ut amet adipisci tempore dignissimos nulla earum quisquam beatae ipsam deserunt debitis hic doloribus eius tempora autem voluptate. Molestiae inventore quam, quisquam dolor neque sequi ut. Qui reprehenderit magni, alias possimus sapiente architecto. Omnis illum, quae nostrum pariatur, dolore, error </div>
-				<div class="tabs-field" data-set="4">Четвертый Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum harum voluptatum, labore quaerat accusantium laudantium porro aut vel ut amet adipisci tempore dignissimos nulla earum quisquam beatae ipsam deserunt debitis hic doloribus eius tempora autem voluptate. Molestiae inventore quam, quisquam dolor neque sequi ut. Qui reprehenderit magni, alias possimus sapiente architecto. Omnis illum, quae nostrum pariatur, dolore, error et aperiam quasi, nobis a vitae iusto animi incidunt repellendus necessitatibus debitis ratione ad dolorem amet obcaecati. Praesentium porro, alias rerum. Enim, quo. Perferendis, modi. Minus molestias, doloremque, maiores quo ipsa quisquam a beatae cumque repellendus dolores fugit, officiis, veniam! Labore, distinctio?</div>
-			</div>
+		<div id="basket-wrapper"></div>
+		<div class="good">
+			<p>Товар №1</p>
+			<p>Цена: <span class="price">200</span></p>
+			<button class="buy" id="good_111">Купить </button>
+		</div>
+		<div class="good">
+			<p>Товар №2</p>
+			<p>Цена: <span class="price">150</span></p>
+			<button class="buy" id="good_112">Купить </button>
+		</div>
+		<div class="good">
+			<p>Товар №3</p>
+			<p>Цена: <span class="price">75</span></p>
+			<button class="buy" id="good_113">Купить </button>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="js/main.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>
